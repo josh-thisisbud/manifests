@@ -74,7 +74,7 @@ Also we can verify that the correct virtualservice was created:
 kubectl get virtualservice -n seldon
 
 NAME   GATEWAYS                        HOSTS   AGE
-echo   ["kubeflow/kubeflow-gateway"]   ["*"]   42m
+echo   ["istio-system/restricted"]   ["*"]   42m
 ```
 
 Finally we can send a request (you will need to fetch the Dex Auth Token / Cookie):

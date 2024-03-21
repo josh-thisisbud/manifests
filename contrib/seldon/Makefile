@@ -8,7 +8,7 @@ seldon-core-operator/base: clean-kustomize
 	sed -i "s#'seldon-webhook-service.kubeflow.svc.cluster.local'#"'seldon-webhook-service.$$(SERVICE_NAMESPACE).svc.cluster.local#' seldon-core-operator/base/resources.yaml
 	sed -i "s#commonName: 'seldon-webhook-service.kubeflow.svc'#"'commonName: seldon-webhook-service.$$(CERTIFICATE_NAMESPACE).svc#' seldon-core-operator/base/resources.yaml
 	sed -i "s#'seldon-webhook-service.kubeflow.svc'#"'seldon-webhook-service.$$(SERVICE_NAMESPACE).svc#' seldon-core-operator/base/resources.yaml
-	sed -i 's#kubeflow/kubeflow-gateway#$$(SERVICE_NAMESPACE)/kubeflow-gateway#' seldon-core-operator/base/resources.yaml
+	sed -i 's#istio-system/restricted#$$(SERVICE_NAMESPACE)/kubeflow-gateway#' seldon-core-operator/base/resources.yaml
 	cp kustomization.tpl seldon-core-operator/base/kustomization.yaml
 	cp kustomizeconfig.tpl seldon-core-operator/base/kustomizeconfig.yaml
 

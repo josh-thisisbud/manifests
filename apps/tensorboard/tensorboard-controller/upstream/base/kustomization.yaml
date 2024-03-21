@@ -7,7 +7,7 @@ configMapGenerator:
   literals:
   - RWO_PVC_SCHEDULING="True"
   - TENSORBOARD_IMAGE=tensorflow/tensorflow:2.5.1
-  - ISTIO_GATEWAY=kubeflow/kubeflow-gateway
+  - ISTIO_GATEWAY=istio-system/restricted
 patchesStrategicMerge:
 - patches/add_controller_config.yaml
 images:

@@ -1,7 +1,7 @@
 - op: replace
   path: /spec/gateways
   value:
-    - kubeflow/kubeflow-gateway
+    - istio-system/restricted
 - op: replace
   path: /spec/http/0/route/0/destination
   value:
@@ -11,4 +11,4 @@
 - op: replace
   path: /spec/gateways
   value:
-    - kubeflow/kubeflow-gateway
+    - istio-system/restricted
