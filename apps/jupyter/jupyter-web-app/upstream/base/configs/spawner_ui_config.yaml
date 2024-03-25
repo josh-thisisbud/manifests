@@ -240,39 +240,62 @@ spawnerFormDefaults:
     value: ""
 
     # the list of available toleration groups in the dropdown
-    options: []
-    #options:
-    #  - groupKey: "group_1"
-    #    displayName: "4 CPU 8Gb Mem at ~$X.XXX USD per day"
-    #    tolerations:
-    #      - key: "dedicated"
-    #        operator: "Equal"
-    #        value: "kubeflow-c5.xlarge"
-    #        effect: "NoSchedule"
-    #
-    #  - groupKey: "group_2"
-    #    displayName: "8 CPU 16Gb Mem at ~$X.XXX USD per day"
-    #    tolerations:
-    #      - key: "dedicated"
-    #        operator: "Equal"
-    #        value: "kubeflow-c5.2xlarge"
-    #        effect: "NoSchedule"
-    #
-    #  - groupKey: "group_3"
-    #    displayName: "16 CPU 32Gb Mem at ~$X.XXX USD per day"
-    #    tolerations:
-    #      - key: "dedicated"
-    #        operator: "Equal"
-    #        value: "kubeflow-c5.4xlarge"
-    #        effect: "NoSchedule"
-    #
-    #  - groupKey: "group_4"
-    #    displayName: "32 CPU 256Gb Mem at ~$X.XXX USD per day"
-    #    tolerations:
-    #      - key: "dedicated"
-    #        operator: "Equal"
-    #        value: "kubeflow-r5.8xlarge"
-    #        effect: "NoSchedule"
+    options:
+     - groupKey: "group_1"
+       displayName: "8 CPU 30Gb Mem at ~$10 USD per day"
+       tolerations:
+         - key: "n1-standard-8-gpu"
+           operator: "Equal"
+           value: "true"
+           effect: "NoSchedule"
+    
+     - groupKey: "group_2"
+       displayName: "SPOT - 12 CPU 85Gb Mem A100(40GB) at  60-91% off USD per day"
+       tolerations:
+         - key: "a2-highgpu-1g-spot"
+           operator: "Equal"
+           value: "true"
+           effect: "NoSchedule"
+    
+     - groupKey: "group_3"
+       displayName: "12 CPU 85Gb Mem A100(40GB) at ~$90 USD per day"
+       tolerations:
+         - key: "a2-highgpu-1g"
+           operator: "Equal"
+           value: "true"
+           effect: "NoSchedule"
+    
+     - groupKey: "group_4"
+       displayName: "SPOT - 12 CPU 170Gb Mem A100(80GB) at 60-91% off per day"
+       tolerations:
+         - key: "a2-ultragpu-1g-spot"
+           operator: "Equal"
+           value: "true"
+           effect: "NoSchedule"
+    
+     - groupKey: "group_5"
+       displayName: "12 CPU 170Gb Mem A100(80GB) at ~$125 USD per day"
+       tolerations:
+         - key: "a2-ultragpu-1g"
+           operator: "Equal"
+           value: "true"
+           effect: "NoSchedule"
+    
+     - groupKey: "group_6"
+       displayName: "SPOT - 8 CPU 32Gb Mem L4 at 60-91% off per day"
+       tolerations:
+         - key: "g2-standard-8-spot"
+           operator: "Equal"
+           value: "true"
+           effect: "NoSchedule"
+    
+     - groupKey: "group_6"
+       displayName: "8 CPU 32Gb Mem L4 at ~$22 USD per day"
+       tolerations:
+         - key: "g2-standard-8"
+           operator: "Equal"
+           value: "true"
+           effect: "NoSchedule"
 
   ################################################################
   # Shared Memory
